@@ -352,9 +352,9 @@
     return offer.sdp;
   }
 
-  function showMsg(s){
-    vidMsg.innerText = s;
-  }
+ // function showMsg(s){
+    //vidMsg.innerText = s;
+ // }
 
   function ready() {
     //vidMsg = document.getElementById('msgOverlay');
