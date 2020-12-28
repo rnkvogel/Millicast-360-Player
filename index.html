@@ -10,13 +10,15 @@ function startPlayer(){
 var accountId = document.getElementById("viewTxt").value;
 var streamName = document.getElementById("streamTxt").value;
 //var subToken = document.getElementById("subToken").value;
-var url = "https://robertdev.influxis.com/millicast/player/?id=" +  streamName + "&account=" + accountId;
+var url = "https://github.com/rnkvogel/Millicast-360-Player//player/?id=" +  streamName + "&account=" + accountId;
  window.open(url);
  }
 
 </script>
 
 <body>
+ <H1>Millicast 360 Video Player Demo</H1>
+ Please input our stream name and account id information.
 <div id="form" class="account-data">
 <input id="tokenTxt" class="base-input" type="text" value="" placeholder="Secure Token" />
 <input id="viewTxt" class="base-input" type="text" value="" placeholder="Account Id"/>
