@@ -357,13 +357,13 @@
   }
 
   function ready() {
-    vidMsg = document.getElementById('msgOverlay');
-    let v = document.getElementsByTagName('video')[0];
-    if (v) {
-      v.addEventListener("click", evt => {
-        v.play();
-      });
-    }
+    //vidMsg = document.getElementById('msgOverlay');
+    //let v = document.getElementsByTagName('video')[0];
+    //if (v) {
+     // v.addEventListener("click", evt => {
+       // v.play();
+     // });
+    //}
     //connect();
     // get a list of Xirsys ice servers.
     getICEServers()
