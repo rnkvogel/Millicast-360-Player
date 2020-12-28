@@ -27,6 +27,11 @@ body {
     position:relative;
  
     }
+ 
+    #msgOverlay {
+     color: white;
+       pointer-events: none;
+    }
    .btn-audio {
      /* background-image:url(images/play.png); */
     background-repeat:no-repeat;
