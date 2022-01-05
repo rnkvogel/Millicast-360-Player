@@ -111,7 +111,7 @@ input.showl {
     padding:5%;
     padding-left:3px;
     opacity: 0.8;
-    border: 0.06666em solid #fff;
+  
     background-image: () repeat-x center #ffcc00;
     background-color:rgba(64,64,64,1);
       -moz-background-size:10%;
