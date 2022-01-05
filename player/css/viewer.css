@@ -33,7 +33,7 @@ body {
        pointer-events: none;
     }
    .btn-audio {
-     /* background-image:url(images/play.png); */
+    background-image:url("../images/muted.png");
     background-repeat:no-repeat;
     background-color: #78756d;
     color: white; 
