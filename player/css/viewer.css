@@ -32,30 +32,27 @@ body {
      color: white;
        pointer-events: none;
     }
-   .btn-audio {
+  .btn-audio {
     background-image:url("../images/muted.png");
+    opacity: 60%;
+    background-size: 70%;
     background-repeat:no-repeat;
     background-color: transparent;
+    border: 0;
     color: white; 
-    font-size: 16px;
-    width:20%;
-    height:15%;
-    position:absolute;
-    left:0%;
-    right:0%;
-    top:0%;
-    bottom:40%;
-    margin:auto;
-    background-size:contain;
-    background-position: center;
-    top: 2%;
+    font-size: .8em;
+    width:12%;
+    height:30%;
+    margin: 0;
+    position: absolute;
+    top: 18%;
+    left: 1%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
    /*animation: cssAnimation 0s 5s forwards;
    opacity: 0; 
   }
-@keyframes cssAnimation {
-  to   { visibility: visible; }
-}*/
-}
+
 
 
 input.btn-audio {
