@@ -11,12 +11,7 @@
   const turnUrl  = 'https://turn.millicast.com/webrtc/_turn';
   //Ice Servers:
   let iceServers = [];
-
-  
-  
-
-
-  function toggleMute(){
+ function toggleMute(){
   video.muted = !video.muted;
   if (!video.muted){
   audioBtn.style.visibility = 'hidden';
@@ -272,22 +267,15 @@
     if (v) {
       v.addEventListener("click", evt => {
         v.play();
+        audioContext.resume();
+
       });
     }
     //connect();
-
-    // get a list of Xirsys ice servers.
-    getICEServers()
-      .then(list => {
-        iceServers = list;
-        //ready to connect.
-        connect();
-      });
-  }
- 
+    
  // Set up an audio element to feed the ambisonic source audio feed.
     const audioElement = document.createElement('audio');
-  
+  // const audioElement = multiopus;
  
 
 // Create AudioContext, MediaElementSourceNode and FOARenderer.
@@ -300,7 +288,23 @@ foaRenderer.initialize().then(function() {
   audioElementSource.connect(foaRenderer.input);
   foaRenderer.output.connect(audioContext.destination);
 
+  // This is necessary to activate audio playback out of autoplay block.
+    if (!video.muted){
+    audioContext.resume();
+   audioElement.play();
+  };
+
+
 });
+
+    // get a list of ice servers.
+    getICEServers()
+      .then(list => {
+        iceServers = list;
+        //ready to connect.
+        connect();
+      });
+  }
 
   if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
     ready();
@@ -318,8 +322,3 @@ var wait = ms => new Promise(resolve => setTimeout(resolve, ms));
     await wait(100);
   }
 })().catch(e => console.log(e));
-
-
-
-
-
