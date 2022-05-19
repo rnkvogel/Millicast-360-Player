@@ -28,5 +28,11 @@ var streamName = document.getElementById("streamTxt").value;
 <div>
 <button id="startPlayer" class="btn-audio"  onClick="startPlayer()" type="button">Start Player</button>
 </div>
+ <script src="https://www.gstatic.com/external_hosted/omnitone/build/omnitone.min.js"></script>
+<script>
+  // `Omnitone` object is loaded and ready.
+  var audioContext = new AudioContext();
+  var foaRenderer = Omnitone.createFOARenderer(audioContext);
+</script>
 </body>
 </html>
