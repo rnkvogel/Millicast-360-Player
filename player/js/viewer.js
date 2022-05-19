@@ -266,7 +266,7 @@
   }
  // Set up an audio element to feed the ambisonic source audio feed.
  const audioElement = document.createElement('audio');
- audioElement.src = audio;
+ //audioElement.src = audio;
 
  // Create AudioContext, MediaElementSourceNode and FOARenderer.
  const audioContext = new AudioContext();
