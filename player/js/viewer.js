@@ -264,26 +264,7 @@
     }
     return offer.sdp;
   }
- // Set up an audio element to feed the ambisonic source audio feed.
- const audioElement = document.createElement('audio');
- //audioElement.src = audio;
 
- // Create AudioContext, MediaElementSourceNode and FOARenderer.
- const audioContext = new AudioContext();
- const audioElementSource = audioContext.createMediaElementSource(audioElement);
- const foaRenderer = Omnitone.createFOARenderer(audioContext);
-
- // Make connection and start play. Hook up the user input for the playback.
-  foaRenderer.initialize().then(function() {
-  audioElementSource.connect(foaRenderer.input);
-  foaRenderer.output.connect(audioContext.destination);
-
-  // This is necessary to activate audio playback out of autoplay block.
-    someButton.onclick = () => {
-    audioContext.resume();
-    audioElement.play();
-  };
-});
 
  let v = document.getElementsByTagName('player')[0];
   function ready() {
@@ -303,7 +284,23 @@
         connect();
       });
   }
+ 
+ // Set up an audio element to feed the ambisonic source audio feed.
+    //const audioElement = document.createElement('audio');
+ const audioElement = multiopus;
+ 
 
+// Create AudioContext, MediaElementSourceNode and FOARenderer.
+const audioContext = new AudioContext();
+const audioElementSource = audioContext.createMediaElementSource(audioElement);
+const foaRenderer = Omnitone.createFOARenderer(audioContext);
+
+// Make connection and start play. Hook up the user input for the playback.
+foaRenderer.initialize().then(function() {
+  audioElementSource.connect(foaRenderer.input);
+  foaRenderer.output.connect(audioContext.destination);
+
+})
   if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
     ready();
   } else {
