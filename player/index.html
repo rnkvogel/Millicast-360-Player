@@ -16,7 +16,8 @@
     </div>
         <script src="js/adapter-latest.js"></script>
         <script src="js/viewer.js"></script>
-		<script type="module">
+	<script src="js/omnitone.js"></script>
+	<script type="module">
           
 			//import * as THREE from 'js/three.module.js';  //may need to be absolute path
 			import * as THREE from 'https://rnkvogel.github.io/Millicast-360-Player/player/js/three.module.js';
@@ -204,13 +205,14 @@
 				renderer.render( scene, camera );
 
 			}
-
-		</script>
-		<script src="https://www.gstatic.com/external_hosted/omnitone/build/omnitone.min.js"></script>
-                <script>
+		         
                 // `Omnitone` object is loaded and ready.
                 var audioContext = new AudioContext();
                 var foaRenderer = Omnitone.createFOARenderer(audioContext);
+	
+      
+                renderer.setRotationMatrix4(camera.matrixWorld.elements);
+
 </script>
 	</body>
 </html>
