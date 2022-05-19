@@ -286,8 +286,8 @@
   }
  
  // Set up an audio element to feed the ambisonic source audio feed.
-    //const audioElement = document.createElement('audio');
- const audioElement = multiopus;
+    const audioElement = document.createElement('audio');
+  
  
 
 // Create AudioContext, MediaElementSourceNode and FOARenderer.
@@ -300,7 +300,8 @@ foaRenderer.initialize().then(function() {
   audioElementSource.connect(foaRenderer.input);
   foaRenderer.output.connect(audioContext.destination);
 
-})
+});
+
   if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
     ready();
   } else {
